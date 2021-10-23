@@ -1,12 +1,12 @@
 const express = require("express");
 const serverless = require("serverless-http");
-const sendEmail = require("./sendMail.js");
+const sendmsg = require("./sendWhatapp");
 
 const app = express();
 const router = express.Router();
 
 router.post("/msg", (req, res) => {
-  sendEmail(req, res);
+  sendmsg(req, res);
 });
 
 app.use(`/.netlify/functions/api`, router);
